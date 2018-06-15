@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>GWHS NHS | Hours</title>
+<meta id = "site viewport" name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+
+<body>
+
+<script type = "text/javascript">
+	function redirect(location) {
+		var url = window.location.href;
+		var fold = url.substr(0, url.lastIndexOf("/"));
+		window.location = fold + "/" + location;
+	}
+	function remove_loading(element) {
+		var loadings = element.parentElement.getElementsByClassName("loading");
+		for(var i = 0; i < loadings.length; i++){
+			loadings[i].addEventListener("webkitAnimationIteration", function(evt) {evt.target.style.animationIterationCount = "0"; evt.target.style.visibility = "hidden";});
+			loadings[i].addEventListener("animationiteration", function(evt) {evt.target.style.animationIterationCount = "0"; evt.target.style.visibility = "hidden";});
+		}
+	}
+	function set_viewport(){
+		if(screen.width < 600){
+			var scale = screen.width/600;
+			document.getElementById("site viewport").setAttribute("content", "width=600, initial-scale="+scale.toString());
+		}
+		if(window.innerHeight > window.innerWidth){
+			document.getElementById("twitter").coords = "16, 0, 110, 94";
+			document.getElementById("instagram").coords = "120, 0, 214, 94";
+		}
+		var test_frame = document.getElementById("test_frame");
+		test_frame.onload = login_message;
+		test_frame.src = "https://script.google.com/a/student.guhsdaz.org/macros/s/AKfycbz3bEOn5xd7RuGPvKW2N3BSx4gYBsJgbuL3mUEsaE4-IBWt4zEq/exec";
+	}
+	
+	function login_message(){
+		var test_frame = document.getElementById("test_frame");
+		if(test_frame.contentWindow.length == 0){
+			document.getElementById("login_request").innerHTML = "Please login to your school gmail account to see your hours";
+			var logout_frame = document.getElementById("logout_frame");
+			logout_frame.onload = function(){document.getElementById("login_request").innerHTML = "Please <a style = 'color: blue;' href = 'https://www.google.com/accounts/Login?continue=https://appengine.google.com/_ah/logout?continue=http://greenwaynhs.000webhostapp.com/Hours'>login to your school gmail account</a> to see your hours"; remove_loading(document.getElementById("hours_div"));};
+			logout_frame.src = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout";
+		} else {
+			var hours_div = document.getElementById("hours_div");
+			hours_div.innerHTML = "<iframe onload = \"remove_loading(this.parentElement);\" style=\"width: 100%; height: 600px;\" frameBorder = \"0\" src=\"https://script.google.com/a/student.guhsdaz.org/macros/s/AKfycbwVbIXF7i2sWlg9ymW5EaUys-vzVU7TkCC9ef6HoEHgmCyEhkvD/exec\"></iframe>";
+		}
+	}
+	window.onload = set_viewport;
+</script>
+
+<img src="../greenwaynhs_logo.png" height="200px" width="200px" style="margin: auto; display: block; width: 200px;" alt="Key Club International">
+<div class="page">
+<div class="navbar">
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../index.html');">Home</div></div>
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../Events/index.html');">Events</div></div>
+	<div class="navbutwrap"><div class="navbutthis">Hours</div></div>
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../About/index.html');">About</div></div>
+</div>
+<div id = "body">
+<div id = "pagebody">
+<div class = "card" style = "min-height: 600px;">
+<div class = "loading" style = "background-color: blue; position: absolute; top: 0px;"></div>
+<h3 id = "login_request" style = "color: red;"></h3>
+<div id = "hours_div"></div><iframe id = "logout_frame" style = "display: none;"></iframe><iframe id = "test_frame" style = "display: none;"></iframe>
+</div>
+<p>If your hours do not load, you can click <a href = "https://docs.google.com/spreadsheets/d/1l3VBfHiVLM75wzEJOm5ASRPi6Tvb7f3uEWMJh_Fw2pA/edit?usp=sharing" target = "_blank">here</a> to view the spreadsheet manually.</p>
+</div>
+</div>
+</div>
+
+<map name = "social_media_map">
+	<area id = "twitter" shape = "rect" coords = "8, 0, 55, 47" href = "https://urlgeni.us/twitter/P6sR" alt = "Twitter" target = "blank">
+	<area id = "instagram" shape = "rect" coords = "60, 0, 107, 47" href = "https://urlgeni.us/instagram/77Xg" alt = "Instagram" target = "blank">
+</map>
+<div class = "bottom-fixed">
+<div class = "resources_link" onclick = "this.childNodes[0].click();"><a href = "http://greenwayhonors.wordpress.com/" target = "_blank">AP/Honors Resources</a></div>
+<img src="../social_media.png" alt = "social media" class = "social_media" usemap = "#social_media_map">
+</div>
+</body>
+</html>

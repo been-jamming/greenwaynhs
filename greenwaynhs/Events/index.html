@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>GWHS NHS | Events</title>
+<meta id = "site viewport" name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+
+<body>
+
+<script type = "text/javascript">
+	function redirect(location) {
+		var url = window.location.href;
+		var fold = url.substr(0, url.lastIndexOf("/"));
+		window.location = fold + "/" + location;
+	}
+	function remove_loading(element) {
+		var loadings = element.parentElement.getElementsByClassName("loading");
+		for(var i = 0; i < loadings.length; i++){
+			loadings[i].addEventListener("webkitAnimationIteration", function(evt) {evt.target.style.animationIterationCount = "0"; evt.target.style.visibility = "hidden";});
+			loadings[i].addEventListener("animationiteration", function(evt) {evt.target.style.animationIterationCount = "0"; evt.target.style.visibility = "hidden";});
+		}
+	}
+	function set_viewport(){
+		if(screen.width < 600){
+			var scale = screen.width/600;
+			document.getElementById("site viewport").setAttribute("content", "width=600, initial-scale="+scale.toString());
+		}
+		document.getElementsByClassName("calendar-div")[0].innerHTML = "<iframe onload = \"remove_loading(this.parentElement)\" src=\"https://calendar.google.com/calendar/embed?src=r3oo3h1k3l73otelms9fsh4ltc%40group.calendar.google.com&ctz=America/Los_Angeles\" style=\"border: 0; display: block; margin: 0 auto;\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+		document.getElementsByClassName("forum-div")[0].innerHTML = "<iframe onload = \"remove_loading(this.parentElement)\" id=\"forum_embed\" src=\"javascript:void(0)\" scrolling=\"no\" frameborder=\"0\"></iframe>";
+		document.getElementById('forum_embed').src =
+		 'https://groups.google.com/forum/embed/?place=forum/greenway-nhs'
+		 + '&showsearch=true&showpopout=true&showtabs=false'
+		 + '&parenturl=' + encodeURIComponent(window.location.href);
+		if(window.innerHeight > window.innerWidth){
+			document.getElementById("twitter").coords = "16, 0, 110, 94";
+			document.getElementById("instagram").coords = "120, 0, 214, 94";
+		}
+	}
+	window.onload = set_viewport;
+</script>
+
+<img src="../greenwaynhs_logo.png" height="200px" width="200px" style="margin: auto; display: block; width: 200px;" alt="Key Club International">
+<div class="page">
+<div class="navbar">
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../index.html');">Home</div></div>
+	<div class="navbutwrap"><div class="navbutthis">Events</div></div>
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../Hours/index.html');">Hours</div></div>
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../About/index.html');">About</div></div>
+</div>
+<div id = "body">
+<div id = "pagebody">
+<h1>Google Calendar</h1>
+<p>Use your google account to sign up for the events on the calendar below:</p>
+<div class = "card">
+<div class = "loading" style = "background-color: blue; position: absolute; top: 0px;"></div>
+<div class = "calendar-div"></div>
+</div>
+<br><hr>
+<h1>Google Groups</h1>
+<p>View topics on our <a target="_blank" href="https://groups.google.com/forum/#!forum/greenway-nhs">google group</a> below:</p>
+<div class = "card">
+<div class = "loading" style = "background-color: blue; position: absolute; top: 0px;"></div>
+<div class = "forum-div"></div>
+</div>
+</div>
+</div>
+</div>
+
+<map name = "social_media_map">
+	<area id = "twitter" shape = "rect" coords = "8, 0, 55, 47" href = "https://urlgeni.us/twitter/P6sR" alt = "Twitter" target = "blank">
+	<area id = "instagram" shape = "rect" coords = "60, 0, 107, 47" href = "https://urlgeni.us/instagram/77Xg" alt = "Instagram" target = "blank">
+</map>
+<div class = "bottom-fixed">
+<div class = "resources_link" onclick = "this.childNodes[0].click();"><a href = "http://greenwayhonors.wordpress.com/" target = "_blank">AP/Honors Resources</a></div>
+<img src="../social_media.png" alt = "social media" class = "social_media" usemap = "#social_media_map">
+</div>
+</body>
+</html>

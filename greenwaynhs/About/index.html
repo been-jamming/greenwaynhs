@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>GWHS NHS | About</title>
+<meta id = "site viewport" name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+
+<body>
+
+<script type = "text/javascript">
+	function redirect(location) {
+		var url = window.location.href;
+		var fold = url.substr(0, url.lastIndexOf("/"));
+		window.location = fold + "/" + location;
+	}
+	function set_viewport(){
+		if(screen.width < 600){
+			var scale = screen.width/600;
+			document.getElementById("site viewport").setAttribute("content", "width=600, initial-scale="+scale.toString());
+		}
+		if(window.innerHeight > window.innerWidth){
+			document.getElementById("twitter").coords = "16, 0, 110, 94";
+			document.getElementById("instagram").coords = "120, 0, 214, 94";
+		}
+	}
+	window.onload = set_viewport;
+</script>
+
+<img src="../greenwaynhs_logo.png" height="200px" width="200px" style="margin: auto; display: block; width: 200px;" alt="Key Club International">
+<div class="page">
+<div class="navbar">
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../index.html');">Home</div></div>
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../Events/index.html');">Events</div></div>
+	<div class="navbutwrap"><div class="navbut" onclick="redirect('../Hours/index.html');">Hours</div></div>
+	<div class="navbutwrap"><div class="navbutthis">About</div></div>
+</div>
+<div id = "body">
+<div id = "pagebody">
+<div class = "card">
+<img style="float: left; width: 25%; padding-right: 10px; padding-bottom: 10px;" src="../michelle.jpg">
+<h2 class = "officer">Michelle Ailport</h2>
+<p class = "bio comment">
+This year, I hope to show Greenway that being a NHS member is more than just something to put on a college application. NHS signifies more than just 28 hours a year — it’s a commitment to our school, our community, and most importantly, ourselves.  National Honor Society members can represent the part of the school that we as a community are most proud of. They can represent the difference between right and wrong. Action and inaction. 
+</p><p class = "bio comment">
+And, service and character can mean a variety of things. I’ve learned that it can be totally spontaneous, like picking up a piece of trash on your way to class or holding a door open for someone. 
+</p><p class = "bio comment">
+Since I joined my Girl Scout troop in 2008, I have been tirelessly committed to school and community involvement.
+</p>
+</div>
+<hr>
+<div class = "card">
+<img style="float: right; width: 25%; padding-left: 10px; padding-bottom: 10px;" src="../ben.jpg">
+<h2 class = "officer">Benjamin Jones</h2>
+<p class = "bio comment">
+The past 3 years of high school have taught me a lot. They have helped me recognize the importance of community, friendship, and leadership. Most importantly, though, they have shown me how these communities and friendships operate.
+</p><p class = "bio comment">
+This year, we will be working hard to expand Greenway’s NHS program to a wider scope than before. With a larger student body, committed officers, and more emphasis on organization, I believe that we can give this group of hard-working students greater opportunities to benefit their communities through service and leadership.
+</p><p class = "bio comment">
+Additionally, I’ve set up this website for this year. If you have any comments/suggestions related to the website, feel free to contact me.
+</p>
+</div>
+<hr>
+<div class = "card">
+<h2 class = "officer">Lee Ann Demers</h2>
+<p class = "bio comment">
+As officers for this year’s NHS, our goal is to increase our efficiency and organization. This means creating a system that allows members to check their hours regularly, updating members on community service opportunities, and other like actions. 
+</p><p class = "bio comment">
+Our goal for the organization as a whole is to prove that NHS is more than its hour and grade requirements — more than the sum of its parts. NHS is a personal commitment to comporting yourself with the values of NHS irrespective of the time or place. 
+</p><p class = "bio comment">
+I have the rare privilege of being your NHS officer this year and I hope together we can work to better our community at school and abroad.
+</p>
+</div>
+</div>
+</div>
+</div>
+<map name = "social_media_map">
+	<area id = "twitter" shape = "rect" coords = "8, 0, 55, 47" href = "https://urlgeni.us/twitter/P6sR" alt = "Twitter" target = "_blank">
+	<area id = "instagram" shape = "rect" coords = "60, 0, 107, 47" href = "https://urlgeni.us/instagram/77Xg" alt = "Instagram" target = "_blank">
+</map>
+<div class = "bottom-fixed">
+<div class = "resources_link" onclick = "this.childNodes[0].click();"><a href = "http://greenwayhonors.wordpress.com/" target = "_blank">AP/Honors Resources</a></div>
+<img src="../social_media.png" alt = "social media" class = "social_media" usemap = "#social_media_map">
+</div>
+</body>
+</html>
