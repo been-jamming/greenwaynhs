@@ -1,0 +1,384 @@
+.viewportRatio(@x, @y) {
+	padding-bottom: (@y/@x)%;
+}
+
+body {
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	background: url("wood_background.jpg");
+	background-color: #fdfdfd;
+	font-size: 1.25vw;
+	padding-bottom: 70px;
+}
+
+#body {
+	background-color: #f7e1bc;
+	border-radius: 8px;
+	padding: 15px 10px 10px 10px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+.preload {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+    visibility: hidden;
+}
+
+#pagebody {
+	padding: 15px 10px 15px 10px;
+	min-height: 500px;
+	position: relative;
+	background: #f8f8f8;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.fadeshow {
+    animation-name: fadein, fadeout;
+    animation-delay: 0s, 9.5s;
+    animation-duration: 0.5s, 0.5s;
+	animation-fill-mode: forwards;
+    position: relative;
+}
+
+div.fadeshow {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #000;
+}
+
+p.fadetext {
+	position: absolute;
+	font-family: 'Cabin Sketch';
+	font-size: 4em;
+	color: #EEC600;
+	background-color: rgba(0, 128, 0, 0.8);
+	border-radius: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+img.fadeimg {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0px;
+	bottom: 0px;
+	margin-top: auto;
+	margin-bottom: auto;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+img.fadeborder {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	-webkit-filter: blur(10px);
+	filter: blur(10px);
+}
+
+#fadeshow {
+    position: relative;
+    height: 500px;
+	width: 100%;
+	background-color: #000000;
+	overflow: hidden;
+}
+
+h1.announce {
+	font-size: 2.3em;
+}
+
+h2.announce {
+	font-size: 1.7em;
+	text-decoration: underline;
+	display: inline;
+}
+
+h3.announce {
+	font-size: 1em;
+	font-style: italic;
+	color: #888;
+	display: inline;
+	padding: 0px 0px 0px 10px;
+}
+
+div.page {
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+@media only screen and (orientation: portrait) {
+	div.page {
+		width: 100%;
+	}
+	img.social_media {
+		width: 174px;
+		height: 72px;
+	}
+	#fadeshow {
+		height: 300px;
+	}
+	p.fadetext {
+		font-size: 2.5em;
+	}
+	body {
+		font-size: 2.5vw;
+		padding-bottom: 94px !important;
+	}
+	div.resources_link {
+		height: 56px !important;
+		line-height: 56px !important;
+	}
+}
+
+div.navbar {
+	height: 2.5em;
+	width: calc(100% - 6px);
+	padding-left: 3px;
+	padding-right: 3px;
+	z-index: 1;
+	font-family: 'Permanent Marker';
+	font-size: 1.25em;
+}
+
+div.navbutwrap {
+	padding-right: 5px;
+	padding-left: 5px;
+	width: calc(25% - 10px);
+	height: 100%;
+	float: left;
+}
+
+div.navbut {
+	background: #ecd9ba;
+	text-align: center;
+	border-radius: 5px 5px 0px 0px;
+	box-shadow: 0px -5px 15px -5px rgba(0, 0, 0, 0.8), inset 0px -4px 15px -5px rgba(0, 0, 0, 0.8);
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	transition: 0.25s;
+	height: 80%;
+	top: 20%;
+	vertical-align: middle;
+	line-height: 200%;
+}
+
+div.navbut:hover {
+	height: 90%;
+	top: 10%;
+}
+
+div.navbutthis {
+	text-align: center;
+	background-color: #f7e1bc;
+	border-radius: 5px 5px 0px 0px;
+	box-shadow: 0px -9px 15px -9px rgba(0, 0, 0, 0.8);
+	position: relative;
+	cursor: default;
+	height: 100%;
+	vertical-align: middle;
+	line-height: 200%;
+	z-index: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div.card {
+	overflow: hidden;
+	padding-top: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	background-color: #fdfdfd;
+	border-radius: 3px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
+	position: relative;
+}
+
+div.easter-egg {
+	width: 630px;
+	display: none;
+	position: fixed !important;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 500000000;
+}
+
+div.shadow {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	transition: background-color 0.5s;
+	z-index: 1000;
+	display: none;
+}
+
+div.easter-egg iframe{
+	width: 600px;
+	height: 600px;
+}
+
+div.calendar-div {
+	position: relative;
+	width: 100%;
+	height: 0px;
+	padding-bottom: 75%;
+}
+
+div.calendar-div iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+div.forum-div {
+	position: relative;
+	width: 100%;
+	height: 0px;
+	padding-bottom: 77%;
+}
+
+div.forum-div iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+div.bottom-fixed {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	padding: 10px;
+	z-index: 1000;
+	background-color: #113147;
+	border-radius: 5px 0px 0px 0px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
+}
+
+img.social_media {
+	float: right;
+}
+
+div.resources_link {
+	display: inline-block;
+	background-color: #f8f8f8;
+	height: 32px;
+	font-size: 1.4em;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #444444;
+	float: right;
+	text-align: center;
+	line-height: 31px;
+	margin: auto 5px;
+	padding: 6px;
+	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.8);
+	cursor: pointer;
+}
+
+div.resources_link a{
+	text-decoration: none;
+	color: black;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.officer {
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+}
+
+p.bio {
+	font-size: calc(16px + 0.25vw);
+}
+
+div.loading {
+	position: absolute;
+	height: 5px;
+	border-radius: 2px;
+	animation-name: loading;
+	animation-delay: 0s;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+
+div.dropdown {
+	position: relative;
+	border-width: 1px;
+	border-color: black;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	padding-left: 10px;
+}
+
+div.dropdown div.inside {
+	cursor: pointer;
+}
+
+div.dropdown div.inside div.data {
+	display: none;
+}
+
+@keyframes fadein {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes fadeout {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+@keyframes highlight {
+	from {height: 1.5em;}
+	to {height: 2em;}
+}
+
+@keyframes dehighlight {
+	from {height: 2em;}
+	to {height: 1.5em}
+}
+
+@keyframes outleft {
+    from {left:  0px;}
+    to {left:  -100%;}
+}
+
+@keyframes inright {
+    from {left:  100%;}
+    to {left:  0px;}
+}
+
+@keyframes loading {
+	0% {left: 0%; width: 0%;}
+	50% {width: 75%;}
+	100% {left: 100%; width: 0%;}
+}
